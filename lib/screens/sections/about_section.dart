@@ -57,7 +57,7 @@ GDSC CU WoC.'''),
               const SizedBox(
                 width: 30.0,
               ),
-              const ImageContainer(),
+              ImageContainer(),
             ],
           ),
           const SizedBox(
@@ -65,7 +65,7 @@ GDSC CU WoC.'''),
           ),
           Row(
             children: [
-              const ImageContainer(),
+              ImageContainer(),
               const SizedBox(
                 width: 30.0,
               ),

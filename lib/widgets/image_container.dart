@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ImageContainer extends StatelessWidget {
-  const ImageContainer({Key? key}) : super(key: key);
+  String imageUrl;
+  ImageContainer({Key? key, this.imageUrl = ''}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +13,9 @@ class ImageContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: context.theme.primaryColor,
         borderRadius: BorderRadius.circular(12.0),
+        image: DecorationImage(
+          image: NetworkImage(imageUrl),
+        ),
       ),
     );
   }
