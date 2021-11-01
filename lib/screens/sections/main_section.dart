@@ -79,7 +79,7 @@ how Google DSC CU Winter of Code works.''',
                 width: 30.0,
               ),
               YoutubeVideoContainer(
-                videoLink: 'https://www.youtube.com/embed/Jqf52nThBt0',
+                videoLink: 'https://www.youtube.com/embed/I9oxrD2C64I',
                 viewType: 'mainVideo',
               ),
             ],
