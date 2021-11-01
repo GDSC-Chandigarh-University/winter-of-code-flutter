@@ -5,4 +5,5 @@ class MyRoutes {
   static String howItWorks = '/how-it-works';
   static String project = '/projects';
   static String sponsors = '/sponsors';
+  static String preRegister = '/pre-register';
 }
