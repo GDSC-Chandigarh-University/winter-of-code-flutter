@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,6 +15,7 @@ class ProcessTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       width: 388,
       height: 232,
@@ -26,7 +28,8 @@ class ProcessTile extends StatelessWidget {
               : Colors.white,
         ),
       ),
-      padding: const EdgeInsets.fromLTRB(25.0, 35.0, 25.0, 25.0),
+      padding: EdgeInsets.fromLTRB(
+          25.0, screenWidth < 500 ? 25.0 : 35.0, 25.0, 25.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -52,7 +55,7 @@ class ProcessTile extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          Text(
+          AutoSizeText(
             '$description',
             style: TextStyle(
               fontWeight: FontWeight.w600,
@@ -61,6 +64,7 @@ class ProcessTile extends StatelessWidget {
                   ? Colors.black
                   : Colors.white,
             ),
+            maxLines: 3,
           ),
         ],
       ),

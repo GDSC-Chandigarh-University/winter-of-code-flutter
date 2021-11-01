@@ -7,14 +7,16 @@ class ImageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      height: 256.0,
-      width: 625.0,
+      height: screenWidth < 500 ? screenWidth * 0.4 : 256.0,
+      width: screenWidth < 965 ? 625.0 : ((screenWidth - 190) / 2),
       decoration: BoxDecoration(
         color: context.theme.primaryColor,
         borderRadius: BorderRadius.circular(12.0),
         image: DecorationImage(
           image: NetworkImage(imageUrl),
+          fit: BoxFit.cover,
         ),
       ),
     );

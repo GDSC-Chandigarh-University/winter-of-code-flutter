@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'dart:js' as js;
 
 class GuidelinesSection extends StatelessWidget {
   const GuidelinesSection({Key? key}) : super(key: key);
@@ -9,8 +10,8 @@ class GuidelinesSection extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       width: screenWidth,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 80.0,
+      padding: EdgeInsets.symmetric(
+        horizontal: screenWidth < 965 ? 40.0 : 80.0,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,9 +45,10 @@ class GuidelinesSection extends StatelessWidget {
           const SizedBox(
             height: 61.0,
           ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
+          Wrap(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            // mainAxisAlignment: MainAxisAlignment.start,
+            runSpacing: 30.0,
             children: [
               Container(
                 width: 396.0,
@@ -58,46 +60,74 @@ class GuidelinesSection extends StatelessWidget {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       'Sample Proposals',
                       style: TextStyle(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                         fontSize: 42.0,
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15.0,
                     ),
-                    Text(
-                      'Organization Proposal Format >',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 22.0,
-                        color: Colors.white,
+                    GestureDetector(
+                      onTap: () {
+                        js.context.callMethod(
+                          'open',
+                          [
+                            'https://google.github.io/gsocguides/student/writing-a-proposal'
+                          ],
+                        );
+                      },
+                      child: const Text(
+                        'Project Proposal Format >',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 22.0,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15.0,
                     ),
-                    Text(
-                      'Project Proposal Format >',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 22.0,
-                        color: Colors.white,
+                    GestureDetector(
+                      onTap: () {
+                        js.context.callMethod(
+                          'open',
+                          [
+                            'https://google.github.io/gsocguides/student/proposal-example-1'
+                          ],
+                        );
+                      },
+                      child: const Text(
+                        'Proposal Example >',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 22.0,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15.0,
                     ),
-                    Text(
-                      'Previous years’ GSoC selected proposals >',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 22.0,
-                        color: Colors.white,
+                    GestureDetector(
+                      onTap: () {
+                        js.context.callMethod(
+                          'open',
+                          ['https://github.com/saketkc/fos-proposals'],
+                        );
+                      },
+                      child: const Text(
+                        'Previous years’ GSoC selected proposals >',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 22.0,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ],

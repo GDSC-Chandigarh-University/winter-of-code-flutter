@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:get/get.dart';
@@ -17,6 +18,7 @@ class TimelineTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     getTextColor() {
       if (isMain) {
         return Colors.white;
@@ -38,13 +40,25 @@ class TimelineTile extends StatelessWidget {
     }
 
     return Container(
-      width: isMain ? 179.0 : 165.0,
-      height: isMain ? 175.0 : 154.0,
-      padding: const EdgeInsets.only(
-        left: 20.0,
-        right: 20.0,
-        top: 20.0,
-        bottom: 10.0,
+      width: isMain
+          ? screenWidth < 500
+              ? 150
+              : 179.0
+          : screenWidth < 500
+              ? 130
+              : 165.0,
+      height: isMain
+          ? screenWidth < 500
+              ? 150
+              : 175.0
+          : screenWidth < 500
+              ? 130
+              : 154.0,
+      padding: EdgeInsets.only(
+        left: screenWidth < 500 ? 10.0 : 20.0,
+        right: screenWidth < 500 ? 10.0 : 20.0,
+        top: screenWidth < 500 ? 10.0 : 20.0,
+        bottom: screenWidth < 500 ? 5.0 : 10.0,
       ),
       decoration: BoxDecoration(
         color: getCardColor(),
@@ -62,13 +76,14 @@ class TimelineTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          AutoSizeText(
             '$title',
             style: TextStyle(
               color: getTextColor(),
-              fontSize: 16.0,
+              fontSize: 15.0,
               fontWeight: FontWeight.w600,
             ),
+            maxLines: 3,
           ),
           Text(
             '$dateText',

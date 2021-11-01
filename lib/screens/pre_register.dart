@@ -3,19 +3,44 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:woc/screens/sections/footer_section.dart';
 import 'package:woc/utils/my_routes.dart';
-import 'package:woc/widgets/image_container.dart';
 import 'package:woc/widgets/text_container.dart';
 import 'package:woc/widgets/themed_button.dart';
 import 'package:woc/widgets/top_navbar.dart';
-import 'package:woc/widgets/youtube_video_container.dart';
+import 'dart:html';
+import 'dart:js' as js;
+import 'dart:ui' as ui;
 
-class AboutPage extends StatelessWidget {
-  const AboutPage({Key? key}) : super(key: key);
+class PreRegister extends StatefulWidget {
+  const PreRegister({Key? key}) : super(key: key);
+
+  @override
+  State<PreRegister> createState() => _PreRegisterState();
+}
+
+class _PreRegisterState extends State<PreRegister> {
+  final IFrameElement _iframeElement = IFrameElement();
+  @override
+  void initState() {
+    _iframeElement.height = '1276';
+    _iframeElement.width = '640';
+    _iframeElement.src =
+        'https://docs.google.com/forms/d/e/1FAIpQLSdvnuqaDG2MKRbnZzjDXBAPZ5RUyJWD7klo6YUycu7p2q5AdA/viewform?embedded=true';
+    _iframeElement.style.border = 'none';
+    // ignore: undefined_prefixed_name
+    ui.platformViewRegistry.registerViewFactory(
+      'gformEmbedding',
+      (int viewId) => _iframeElement,
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+    final Widget _iframeWidget = HtmlElementView(
+      key: UniqueKey(),
+      viewType: 'gformEmbedding',
+    );
     double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       endDrawer: Drawer(
         child: Container(
@@ -69,16 +94,15 @@ class AboutPage extends StatelessWidget {
                                     : context.theme.backgroundColor,
                             child: SingleChildScrollView(
                               child: Container(
-                                padding: const EdgeInsets.all(40.0),
-                                child: Center(
-                                  child: TextContainer(
-                                    title: 'Organizations,',
-                                    description:
-                                        'mentors, and projects\nwill be announced on\n1 Dec 2021',
-                                    isDisabled: true,
-                                  ),
-                                ),
-                              ),
+                                  padding: const EdgeInsets.all(40.0),
+                                  child: Center(
+                                    child: TextContainer(
+                                      title: 'Organizations,',
+                                      description:
+                                          'mentors, and projects\nwill be announced on\n1 Dec 2021',
+                                      isDisabled: true,
+                                    ),
+                                  )),
                             ),
                           ),
                         );
@@ -193,7 +217,7 @@ class AboutPage extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              'About ',
+                              'Pre-register ',
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: screenWidth < 965
@@ -213,7 +237,7 @@ class AboutPage extends StatelessWidget {
                                       : 45.0,
                                 ),
                                 Text(
-                                  'the program',
+                                  'today',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     fontSize: screenWidth < 965
@@ -230,8 +254,11 @@ class AboutPage extends StatelessWidget {
                           ],
                         ),
                         AutoSizeText(
-                          '''Learn about what is Winter of Code,
-what is eligibility crieteria,\nand what you\'ll get out of it.''',
+                          '''and refer 10 friends to avail early
+mentorship and extra benfits, including
+help with your proposal and early
+community bonding.
+''',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 28.0,
@@ -242,159 +269,75 @@ what is eligibility crieteria,\nand what you\'ll get out of it.''',
                           maxLines: 4,
                         ),
                         const SizedBox(
-                          height: 70.0,
+                          height: 10.0,
                         ),
-                        Text(
-                          '''Winter of code is a month long coding program, similar to Google\'s Summer of Code, mainly for freshers and open-source enthusists. The main aim of this program is to make students ready for Google Summer of Code, by providing a similar experience so that students could grasp the basics of open-source contributions, working under industrial mentor, building real-world solutions, and expanding their technical knowledge.''',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18.0,
-                            color: context.theme.backgroundColor == Colors.white
-                                ? Colors.black
-                                : Colors.white,
+                        Container(
+                          width: screenWidth - 160,
+                          child: Text(
+                            '''To avail benefits of pre-registrations, refer 10 friends. 
+Your referral code is your registered email id. Ask your friends to enter your email id in place of Referral Email Id field.
+By referring 10 friends, you'll get early mentorship and extra benefits, including guidance to your proposal and early community bonding to strengthen your chance of acceptance.
+The person you are referring will also get a digital badge along with you.
+Fill the form and start referring.''',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18.0,
+                              color:
+                                  context.theme.backgroundColor == Colors.white
+                                      ? Colors.black
+                                      : Colors.white,
+                            ),
                           ),
                         ),
-                        const SizedBox(
-                          height: 40.0,
-                        ),
-                        Text(
-                          'Eligibility',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 28.0,
-                            color: context.theme.backgroundColor == Colors.white
-                                ? Colors.black
-                                : Colors.white,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20.0,
-                        ),
-                        Text(
-                          '''Any student with basic understanding of any programming language can apply for this program. Student must be enrolled in any university/college of India. 
-Beginners can take basic projects and can learn new concepts during the program from their mentors.
-Intermediate and Advance programmers can take more complex by big organisations and can expand their technical skills.''',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18.0,
-                            color: context.theme.backgroundColor == Colors.white
-                                ? Colors.black
-                                : Colors.white,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 40.0,
-                        ),
-                        Text(
-                          'What’s there for you?',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 28.0,
-                            color: context.theme.backgroundColor == Colors.white
-                                ? Colors.black
-                                : Colors.white,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20.0,
-                        ),
-                        Text(
-                          '''- Exciting Swags on completion of coding month.
-- Certificate of participation and completion.
-- Exposure for Google Summer of Code.
-- Mentorship from industrial experts.
-- Contribution in open-source organisations.
-- Connections with industrial experts.
-- Additional benefits from our sponsors.''',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18.0,
-                            color: context.theme.backgroundColor == Colors.white
-                                ? Colors.black
-                                : Colors.white,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 40.0,
-                        ),
-                        Text(
-                          '''Ready to take grab this opportunity?''',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18.0,
-                            color: context.theme.backgroundColor == Colors.white
-                                ? Colors.black
-                                : Colors.white,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 40.0,
-                        ),
-                        ThemedButton(
-                          onPressed: () {
-                            showDialog(
-                              context: context,
-                              builder: (context) => Dialog(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                backgroundColor:
-                                    context.theme.backgroundColor ==
-                                            Colors.white
-                                        ? context.theme.backgroundColor
-                                        : context.theme.backgroundColor,
-                                child: SingleChildScrollView(
-                                  child: Container(
-                                    padding: const EdgeInsets.all(40.0),
-                                    child: Wrap(
-                                      runSpacing: 30.0,
-                                      spacing: 30.0,
-                                      children: [
-                                        TextContainer(
-                                          title: 'Student Pre-registration',
-                                          description:
-                                              'Pre-register now to avail additional benefits.',
-                                          link: 'Fill the form >',
-                                          onTap: () {
-                                            Navigator.pop(context);
-                                            Navigator.pushNamed(
-                                              context,
-                                              MyRoutes.preRegister,
-                                            );
-                                          },
-                                        ),
-                                        TextContainer(
-                                          title: 'Organization Registration',
-                                          description:
-                                              'Opens on 13th Nov, 12 am IST.',
-                                          isDisabled: true,
-                                        ),
-                                        TextContainer(
-                                          title: 'Mentor Registrations',
-                                          description:
-                                              'Opens on 13th Nov, 12 am IST.',
-                                          isDisabled: true,
-                                        ),
-                                        TextContainer(
-                                          title: 'Student Registeration',
-                                          description:
-                                              'Opens on 2nd Dec, 12 am IST.',
-                                          isDisabled: true,
-                                        ),
-                                      ],
+                        screenWidth < 965
+                            ? Container()
+                            : InkWell(
+                                onTap: () {
+                                  js.context.callMethod(
+                                    'open',
+                                    ['https://forms.gle/QrHbtfDKH7WAEBRe9'],
+                                  );
+                                },
+                                child: Container(
+                                  width: screenWidth - 160,
+                                  child: Text(
+                                    '''If you are not able to fill the form given below, go to https://forms.gle/QrHbtfDKH7WAEBRe9''',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18.0,
+                                      color: context.theme.backgroundColor ==
+                                              Colors.white
+                                          ? const Color(0xff4285F4)
+                                          : const Color(0xff8AB4F8),
                                     ),
                                   ),
                                 ),
                               ),
-                            );
-                          },
-                          title: 'Apply Now',
+                        const SizedBox(
+                          height: 40.0,
+                        ),
+                        screenWidth < 965
+                            ? ThemedButton(
+                                onPressed: () {
+                                  js.context.callMethod(
+                                    'open',
+                                    ['https://forms.gle/QrHbtfDKH7WAEBRe9'],
+                                  );
+                                },
+                                title: 'Pre-register Now',
+                              )
+                            : Center(
+                                child: Container(
+                                  height: 1550.0,
+                                  width: 640.0,
+                                  child: _iframeWidget,
+                                ),
+                              ),
+                        const SizedBox(
+                          height: 80.0,
                         ),
                       ],
                     ),
-                  ),
-                  const SizedBox(
-                    height: 91.0,
                   ),
                   const FooterSection(),
                 ],

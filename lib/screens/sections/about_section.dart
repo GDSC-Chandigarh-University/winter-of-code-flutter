@@ -12,8 +12,8 @@ class AboutSection extends StatelessWidget {
 
     return Container(
       width: screenWidth,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 80.0,
+      padding: EdgeInsets.symmetric(
+        horizontal: screenWidth < 965 ? 40.0 : 80.0,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,34 +47,30 @@ class AboutSection extends StatelessWidget {
           const SizedBox(
             height: 61.0,
           ),
-          Row(
-            children: [
-              TextContainer(
-                  title: 'Have a project?',
-                  description: '''Organizations can get their open-sourced
+          SizedBox(
+            width: screenWidth < 965 ? screenWidth - 80 : screenWidth - 160,
+            child: Wrap(
+              spacing: 30.0,
+              runSpacing: 30.0,
+              children: [
+                TextContainer(
+                    title: 'Have a project?',
+                    description: '''Organizations can get their open-sourced
 projects completed, by registering to
 GDSC CU WoC.'''),
-              const SizedBox(
-                width: 30.0,
-              ),
-              ImageContainer(),
-            ],
-          ),
-          const SizedBox(
-            height: 30.0,
-          ),
-          Row(
-            children: [
-              ImageContainer(),
-              const SizedBox(
-                width: 30.0,
-              ),
-              TextContainer(
-                  title: 'Want to contribute?',
-                  description: '''Students can register themselves to work
+                ImageContainer(
+                  imageUrl: 'https://i.ibb.co/2FB6BhD/Group-28.png',
+                ),
+                ImageContainer(
+                  imageUrl: 'https://i.ibb.co/5MDWywp/Group-27.png',
+                ),
+                TextContainer(
+                    title: 'Want to contribute?',
+                    description: '''Students can register themselves to work
 and contribute to the open-sources projects
 by organizations.'''),
-            ],
+              ],
+            ),
           ),
           const SizedBox(
             height: 81.0,

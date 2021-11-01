@@ -1,13 +1,23 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SponsorsTile extends StatelessWidget {
-  const SponsorsTile({Key? key}) : super(key: key);
+  String? logoLink;
+  String? sponsorName;
+  String? title;
+  SponsorsTile({
+    Key? key,
+    @required this.logoLink,
+    @required this.sponsorName,
+    @required this.title,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      width: 180.0,
+      width: screenWidth < 500 ? 140 : 180.0,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -25,9 +35,9 @@ class SponsorsTile extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: context.theme.cardColor,
-                  image: const DecorationImage(
+                  image: DecorationImage(
                     image: NetworkImage(
-                      'https://cpng.pikpng.com/pngl/s/546-5462793_store-coming-soon-transparent-coming-soon-banner-clipart.png',
+                      '$logoLink',
                     ),
                   ),
                 ),
@@ -41,16 +51,32 @@ class SponsorsTile extends StatelessWidget {
               left: 15.0,
               right: 15.0,
             ),
-            child: Text(
-              'Coming Soon',
-              style: TextStyle(
-                color: context.theme.backgroundColor == Colors.white
-                    ? Colors.black
-                    : Colors.white,
-                fontSize: 16.0,
-                fontWeight: FontWeight.w500,
-              ),
-              textAlign: TextAlign.center,
+            child: Column(
+              children: [
+                Text(
+                  '$sponsorName',
+                  style: TextStyle(
+                    color: context.theme.backgroundColor == Colors.white
+                        ? Colors.black
+                        : Colors.white,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                AutoSizeText(
+                  '$title',
+                  style: TextStyle(
+                    color: context.theme.backgroundColor == Colors.white
+                        ? Colors.black
+                        : Colors.white,
+                    fontSize: 13.0,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                ),
+              ],
             ),
           ),
         ],

@@ -1,5 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:woc/utils/my_routes.dart';
 import 'package:woc/widgets/text_container.dart';
 import 'package:woc/widgets/youtube_video_container.dart';
 
@@ -12,8 +14,8 @@ class MainSection extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       width: screenWidth,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 80.0,
+      padding: EdgeInsets.symmetric(
+        horizontal: screenWidth < 965 ? 40.0 : 80.0,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,7 +29,7 @@ class MainSection extends StatelessWidget {
                 'Winter of Code ',
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
-                  fontSize: 90.0,
+                  fontSize: screenWidth < 965 ? screenWidth * 0.09 : 90.0,
                   color: context.theme.backgroundColor == Colors.white
                       ? Colors.black
                       : Colors.white,
@@ -35,14 +37,14 @@ class MainSection extends StatelessWidget {
               ),
               Column(
                 children: [
-                  const SizedBox(
-                    height: 45.0,
+                  SizedBox(
+                    height: screenWidth < 965 ? screenWidth * 0.03 : 45.0,
                   ),
                   Text(
                     'is here!',
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
-                      fontSize: 28.0,
+                      fontSize: screenWidth < 965 ? screenWidth * 0.03 : 28.0,
                       color: context.theme.backgroundColor == Colors.white
                           ? Colors.black
                           : Colors.white,
@@ -52,7 +54,7 @@ class MainSection extends StatelessWidget {
               ),
             ],
           ),
-          Text(
+          AutoSizeText(
             '''A month long coding extravaganza for freshers
 and open-source enthusiasts by
 Google DSC Chandigarh University.''',
@@ -63,20 +65,23 @@ Google DSC Chandigarh University.''',
                   ? Colors.black
                   : Colors.white,
             ),
+            maxLines: 3,
           ),
-          const SizedBox(
-            height: 110.0,
+          SizedBox(
+            height: screenWidth < 965 ? screenWidth * 0.1 : 110.0,
           ),
-          Row(
+          Wrap(
+            spacing: 30.0,
+            runSpacing: 30.0,
             children: [
               TextContainer(
                 title: 'Know how it works',
                 description: '''Get complete steps to understand,
-how Google DSC CU Winter of Code works.''',
-                link: 'Know about it',
-              ),
-              const SizedBox(
-                width: 30.0,
+how Google DSC CU Winter of Code works.
+Know about it''',
+                onTap: () {
+                  Navigator.of(context).pushNamed(MyRoutes.howItWorks);
+                },
               ),
               YoutubeVideoContainer(
                 videoLink: 'https://www.youtube.com/embed/I9oxrD2C64I',

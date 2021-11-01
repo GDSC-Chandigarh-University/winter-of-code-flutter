@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
+import 'package:woc/screens/pre_register.dart';
 import 'package:woc/utils/my_routes.dart';
+import 'package:woc/widgets/text_container.dart';
 
 class TopNavbar extends StatelessWidget {
   const TopNavbar({Key? key}) : super(key: key);
@@ -33,59 +36,207 @@ class TopNavbar extends StatelessWidget {
           const SizedBox(
             width: 30.0,
           ),
-          ModalRoute.of(context)?.settings.name != MyRoutes.about
-              ? NavBarButton(
-                  title: 'About',
-                  onTap: () {
-                    Navigator.pushNamed(context, MyRoutes.about);
-                  },
-                )
+          screenWidth > 965
+              ? ModalRoute.of(context)?.settings.name != MyRoutes.about
+                  ? NavBarButton(
+                      title: 'About',
+                      onTap: () {
+                        Navigator.pushNamed(context, MyRoutes.about);
+                      },
+                    )
+                  : Container()
               : Container(),
-          ModalRoute.of(context)?.settings.name != MyRoutes.organisations
-              ? NavBarButton(
-                  title: 'Organisations',
-                  onTap: () {
-                    Navigator.pushNamed(context, MyRoutes.about);
-                  },
-                )
+          screenWidth > 965
+              ? ModalRoute.of(context)?.settings.name != MyRoutes.organisations
+                  ? NavBarButton(
+                      title: 'Organisations',
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => Dialog(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            backgroundColor:
+                                context.theme.backgroundColor == Colors.white
+                                    ? context.theme.backgroundColor
+                                    : context.theme.backgroundColor,
+                            child: SingleChildScrollView(
+                              child: Container(
+                                  padding: const EdgeInsets.all(40.0),
+                                  child: Center(
+                                    child: TextContainer(
+                                      title: 'Organizations,',
+                                      description:
+                                          'mentors, and projects\nwill be announced on\n1 Dec 2021',
+                                      isDisabled: true,
+                                    ),
+                                  )),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : Container()
               : Container(),
-          ModalRoute.of(context)?.settings.name != MyRoutes.howItWorks
-              ? NavBarButton(
-                  title: 'How it Works',
-                  onTap: () {
-                    Navigator.pushNamed(context, MyRoutes.howItWorks);
-                  },
-                )
+          screenWidth > 965
+              ? ModalRoute.of(context)?.settings.name != MyRoutes.howItWorks
+                  ? NavBarButton(
+                      title: 'How it Works',
+                      onTap: () {
+                        Navigator.pushNamed(context, MyRoutes.howItWorks);
+                      },
+                    )
+                  : Container()
               : Container(),
-          ModalRoute.of(context)?.settings.name != MyRoutes.help
-              ? NavBarButton(
-                  title: 'Help',
-                  onTap: () {
-                    Navigator.pushNamed(context, MyRoutes.help);
-                  },
-                )
+          screenWidth > 965
+              ? ModalRoute.of(context)?.settings.name != MyRoutes.help
+                  ? NavBarButton(
+                      title: 'Help',
+                      onTap: () {
+                        Navigator.pushNamed(context, MyRoutes.help);
+                      },
+                    )
+                  : Container()
               : Container(),
-          ModalRoute.of(context)?.settings.name != MyRoutes.project
-              ? NavBarButton(
-                  title: 'Projects',
-                  onTap: () {
-                    Navigator.pushNamed(context, MyRoutes.about);
-                  },
-                )
+          screenWidth > 965
+              ? ModalRoute.of(context)?.settings.name != MyRoutes.project
+                  ? NavBarButton(
+                      title: 'Projects',
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => Dialog(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            backgroundColor:
+                                context.theme.backgroundColor == Colors.white
+                                    ? context.theme.backgroundColor
+                                    : context.theme.backgroundColor,
+                            child: SingleChildScrollView(
+                              child: Container(
+                                padding: const EdgeInsets.all(40.0),
+                                child: Center(
+                                  child: TextContainer(
+                                    title: 'Projects,',
+                                    description:
+                                        'along with organizations,\nwill be announced on\n1 Dec 2021',
+                                    isDisabled: true,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : Container()
               : Container(),
-          ModalRoute.of(context)?.settings.name != MyRoutes.sponsors
-              ? NavBarButton(
-                  title: 'Sponsers',
-                  onTap: () {
-                    Navigator.pushNamed(context, MyRoutes.about);
-                  },
-                )
+          screenWidth > 965
+              ? ModalRoute.of(context)?.settings.name != MyRoutes.sponsors
+                  ? NavBarButton(
+                      title: 'Sponsors',
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => Dialog(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            backgroundColor:
+                                context.theme.backgroundColor == Colors.white
+                                    ? context.theme.backgroundColor
+                                    : context.theme.backgroundColor,
+                            child: SingleChildScrollView(
+                              child: Container(
+                                padding: const EdgeInsets.all(40.0),
+                                child: Center(
+                                  child: TextContainer(
+                                    title: 'Become our Sponser,',
+                                    description:
+                                        'drop us a mail at dsc@cumail.in, we\'ll reach back to you within a day.',
+                                    isDisabled: true,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : Container()
               : Container(),
           const Spacer(),
           NavBarButton(
             title: 'Apply Now',
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) => Dialog(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  backgroundColor: context.theme.backgroundColor == Colors.white
+                      ? context.theme.backgroundColor
+                      : context.theme.backgroundColor,
+                  child: SingleChildScrollView(
+                    child: Container(
+                      padding: const EdgeInsets.all(40.0),
+                      child: Wrap(
+                        runSpacing: 30.0,
+                        spacing: 30.0,
+                        children: [
+                          TextContainer(
+                            title: 'Student Pre-registration',
+                            description:
+                                'Pre-register now to avail additional benefits.\nFill the form >',
+                            onTap: () {
+                              Navigator.pop(context);
+                              Navigator.pushNamed(
+                                context,
+                                MyRoutes.preRegister,
+                              );
+                            },
+                          ),
+                          TextContainer(
+                            title: 'Organization Registration',
+                            description: 'Opens on 13th Nov, 12 am IST.',
+                            isDisabled: true,
+                          ),
+                          TextContainer(
+                            title: 'Mentor Registrations',
+                            description: 'Opens on 13th Nov, 12 am IST.',
+                            isDisabled: true,
+                          ),
+                          TextContainer(
+                            title: 'Student Registeration',
+                            description: 'Opens on 2nd Dec, 12 am IST.',
+                            isDisabled: true,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            },
           ),
+          screenWidth < 965
+              ? NavBarIconButton(
+                  icon: Icon(
+                    FeatherIcons.menu,
+                    color: ContextExtensionss(context).theme.backgroundColor ==
+                            Colors.white
+                        ? Colors.black
+                        : Colors.white,
+                    size: 20.0,
+                  ),
+                  onTap: () {
+                    Scaffold.of(context).openEndDrawer();
+                  },
+                )
+              : Container(),
         ],
       ),
     );
@@ -119,6 +270,29 @@ class NavBarButton extends StatelessWidget {
                   : Colors.white,
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class NavBarIconButton extends StatelessWidget {
+  Widget? icon;
+  void Function()? onTap;
+  NavBarIconButton({Key? key, @required this.icon, @required this.onTap})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 64.0,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 0.0,
+      ),
+      child: Center(
+        child: IconButton(
+          icon: icon!,
+          onPressed: onTap,
         ),
       ),
     );

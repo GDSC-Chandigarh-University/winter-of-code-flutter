@@ -10,8 +10,8 @@ class TimelineSection extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       width: screenWidth,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 80.0,
+      padding: EdgeInsets.symmetric(
+        horizontal: screenWidth < 965 ? 40.0 : 80.0,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,7 +39,7 @@ class TimelineSection extends StatelessWidget {
             height: 4.0,
           ),
           Text(
-            'Oct 2021 - Jan 2022',
+            'Nov 2021 - Feb 2022',
             style: TextStyle(
               fontWeight: FontWeight.w400,
               fontSize: 16.0,
@@ -51,95 +51,175 @@ class TimelineSection extends StatelessWidget {
           const SizedBox(
             height: 60.0,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              TimelineTile(
-                dateText: '9 Oct ‘21',
-                title: 'Intro Talk',
-                isMain: true,
-              ),
-              TimelineTile(
-                dateText: '10 Oct - 25 Oct ‘21',
-                title: 'Organization Application Period',
-                isMain: false,
-              ),
-              TimelineTile(
-                dateText: '28 Oct ‘21',
-                title: 'Organizations Annouced',
-                isMain: false,
-              ),
-              TimelineTile(
-                dateText: '29 Oct - 15 Nov ‘21',
-                title: 'Student Application Period',
-                isMain: false,
-              ),
-              TimelineTile(
-                dateText: '15 Nov - 25 Nov ‘21',
-                title: 'Application Review Period',
-                isMain: false,
-              ),
-              TimelineTile(
-                dateText: '26 Nov ‘21',
-                title: 'Student Projects Announced',
-                isMain: false,
-              ),
-              TimelineTile(
-                dateText: '27 Nov - 6 Dec ‘21',
-                title: 'Community Bonding',
-                isMain: false,
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 15.0,
-          ),
-          Container(
-            height: 9.0,
-            decoration: BoxDecoration(
-              color: context.theme.primaryColor,
-              borderRadius: BorderRadius.circular(
-                20.0,
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 15.0,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SpaceTile(),
-              TimelineTile(
-                dateText: '28 Oct ‘21',
-                title: 'Organizations Annouced',
-                isMain: false,
-              ),
-              TimelineTile(
-                dateText: '29 Oct - 15 Nov ‘21',
-                title: 'Student Application Period',
-                isMain: false,
-              ),
-              TimelineTile(
-                dateText: '15 Nov - 25 Nov ‘21',
-                title: 'Application Review Period',
-                isMain: false,
-              ),
-              TimelineTile(
-                dateText: '26 Nov ‘21',
-                title: 'Student Projects Announced',
-                isMain: false,
-              ),
-              TimelineTile(
-                dateText: '27 Nov - 6 Dec ‘21',
-                title: 'Community Bonding',
-                isMain: true,
-              ),
-              const SpaceTile(),
-            ],
-          ),
+          screenWidth < 1365
+              ? Center(
+                  child: Wrap(
+                    runAlignment: WrapAlignment.center,
+                    alignment: WrapAlignment.center,
+                    crossAxisAlignment: WrapCrossAlignment.end,
+                    spacing: 10,
+                    runSpacing: 10,
+                    children: [
+                      TimelineTile(
+                        dateText: '1 Nov ‘21',
+                        title: 'Program\nLaunch',
+                        isMain: true,
+                      ),
+                      TimelineTile(
+                        dateText: '1 Nov - 26 Nov ‘21',
+                        title: 'Students\nPre-registration',
+                        isMain: false,
+                      ),
+                      TimelineTile(
+                        dateText: '13 Nov - 27 Nov ‘21',
+                        title: 'Organization Application Period',
+                        isMain: false,
+                      ),
+                      TimelineTile(
+                        dateText: '1 Dec ‘21',
+                        title: 'Organizations Announcement',
+                        isMain: false,
+                      ),
+                      TimelineTile(
+                        dateText: '2 Dec - 16 Dec ‘21',
+                        title: 'Student Application Period',
+                        isMain: false,
+                      ),
+                      TimelineTile(
+                        dateText: '21 Dec ‘21',
+                        title: 'Student Projects Announcement',
+                        isMain: false,
+                      ),
+                      TimelineTile(
+                        dateText: '22 Dec - 25 Dec ‘21',
+                        title: 'Community Bonding',
+                        isMain: false,
+                      ),
+                      TimelineTile(
+                        dateText: '26 Dec - 26 Jan ‘21',
+                        title: 'Coding Period',
+                        isMain: false,
+                      ),
+                      TimelineTile(
+                        dateText: '4 Jan - 7 Jan ‘21',
+                        title: 'Mid-way Evaluations',
+                        isMain: false,
+                      ),
+                      TimelineTile(
+                        dateText: '27 Jan - 29 Jan ‘21',
+                        title: 'Students Submit Code and Final Evaluation',
+                        isMain: false,
+                      ),
+                      TimelineTile(
+                        dateText: '30 Jan - 31 Jan ‘21',
+                        title: 'Mentors Submit Final Evaluations',
+                        isMain: false,
+                      ),
+                      TimelineTile(
+                        dateText: '4 Feb ‘21',
+                        title: 'Results\nAnnonced',
+                        isMain: true,
+                      ),
+                    ],
+                  ),
+                )
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    TimelineTile(
+                      dateText: '1 Nov ‘21',
+                      title: 'Program\nLaunch',
+                      isMain: true,
+                    ),
+                    TimelineTile(
+                      dateText: '1 Nov - 26 Nov ‘21',
+                      title: 'Students\nPre-registration',
+                      isMain: false,
+                    ),
+                    TimelineTile(
+                      dateText: '13 Nov - 27 Nov ‘21',
+                      title: 'Organization Application Period',
+                      isMain: false,
+                    ),
+                    TimelineTile(
+                      dateText: '1 Dec ‘21',
+                      title: 'Organizations Announcement',
+                      isMain: false,
+                    ),
+                    TimelineTile(
+                      dateText: '2 Dec - 16 Dec ‘21',
+                      title: 'Student Application Period',
+                      isMain: false,
+                    ),
+                    TimelineTile(
+                      dateText: '21 Dec ‘21',
+                      title: 'Student Projects Announcement',
+                      isMain: false,
+                    ),
+                    TimelineTile(
+                      dateText: '22 Dec - 25 Dec ‘21',
+                      title: 'Community Bonding',
+                      isMain: false,
+                    ),
+                  ],
+                ),
+          screenWidth < 1365
+              ? Container()
+              : const SizedBox(
+                  height: 15.0,
+                ),
+          screenWidth < 1365
+              ? Container()
+              : Container(
+                  height: 9.0,
+                  decoration: BoxDecoration(
+                    color: context.theme.primaryColor,
+                    borderRadius: BorderRadius.circular(
+                      20.0,
+                    ),
+                  ),
+                ),
+          screenWidth < 1365
+              ? Container()
+              : const SizedBox(
+                  height: 15.0,
+                ),
+          screenWidth < 1365
+              ? Container()
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SpaceTile(),
+                    TimelineTile(
+                      dateText: '26 Dec - 26 Jan ‘21',
+                      title: 'Coding Period',
+                      isMain: false,
+                    ),
+                    TimelineTile(
+                      dateText: '4 Jan - 7 Jan ‘21',
+                      title: 'Mid-way Evaluations',
+                      isMain: false,
+                    ),
+                    TimelineTile(
+                      dateText: '27 Jan - 29 Jan ‘21',
+                      title: 'Students Submit Code and Final Evaluation',
+                      isMain: false,
+                    ),
+                    TimelineTile(
+                      dateText: '30 Jan - 31 Jan ‘21',
+                      title: 'Mentors Submit Final Evaluations',
+                      isMain: false,
+                    ),
+                    TimelineTile(
+                      dateText: '4 Feb ‘21',
+                      title: 'Results\nAnnonced',
+                      isMain: true,
+                    ),
+                    const SpaceTile(),
+                  ],
+                ),
           const SizedBox(
             height: 79.0,
           ),

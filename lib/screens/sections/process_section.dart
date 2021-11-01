@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:woc/utils/my_routes.dart';
 import 'package:woc/widgets/process_tile.dart';
 
 class ProcessSection extends StatelessWidget {
@@ -10,8 +12,8 @@ class ProcessSection extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       width: screenWidth,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 80.0,
+      padding: EdgeInsets.symmetric(
+        horizontal: screenWidth < 965 ? 40.0 : 80.0,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,8 +47,10 @@ class ProcessSection extends StatelessWidget {
           const SizedBox(
             height: 68.0,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Wrap(
+            spacing: 40.0,
+            runSpacing: 40.0,
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ProcessTile(
                 number: 1,
@@ -90,9 +94,13 @@ class ProcessSection extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     fontSize: 16.0,
                   ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.of(context).pushNamed(MyRoutes.help);
+                    },
                 ),
                 TextSpan(
-                  text: ' for\nmore details.',
+                  text: ' for more details.',
                   style: TextStyle(
                     color: context.theme.backgroundColor == Colors.white
                         ? Colors.black
