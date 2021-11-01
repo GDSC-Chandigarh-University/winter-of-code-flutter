@@ -6,6 +6,7 @@ import 'package:woc/screens/help_page.dart';
 import 'package:woc/screens/home_page.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'package:woc/screens/how_it_works_page.dart';
+import 'package:woc/screens/pre_register.dart';
 import 'package:woc/utils/my_routes.dart';
 
 void main() {
@@ -41,6 +42,7 @@ class WoC extends StatelessWidget {
         MyRoutes.about: (context) => const AboutPage(),
         MyRoutes.howItWorks: (context) => const HowItWorksPage(),
         MyRoutes.help: (context) => const HelpPage(),
+        MyRoutes.preRegister: (context) => const PreRegister(),
       },
     );
   }
