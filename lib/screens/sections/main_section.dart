@@ -56,18 +56,19 @@ class MainSection extends StatelessWidget {
           ),
           SizedBox(
             child: AutoSizeText(
-              '''A month long coding extravaganza for freshers
+              screenWidth < 500
+                  ? 'A month long coding extravaganza for freshers and open-source enthusiasts by Google DSC Chandigarh University.'
+                  : '''A month long coding extravaganza for freshers
 and open-source enthusiasts by
 Google DSC Chandigarh University.''',
               style: TextStyle(
                 fontWeight: FontWeight.w600,
-                fontSize: 28.0,
+                fontSize: screenWidth < 500 ? screenWidth * 0.03 : 28.0,
                 color: context.theme.backgroundColor == Colors.white
                     ? Colors.black
                     : Colors.white,
               ),
               textAlign: TextAlign.left,
-              maxLines: 3,
             ),
           ),
           SizedBox(

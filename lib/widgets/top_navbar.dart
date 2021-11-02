@@ -251,23 +251,26 @@ class NavBarButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        height: 64.0,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16.0,
-        ),
-        child: Center(
-          child: Text(
-            '$title',
-            style: TextStyle(
-              fontSize: 16.0,
-              fontWeight: FontWeight.w600,
-              color: ContextExtensionss(context).theme.backgroundColor ==
-                      Colors.white
-                  ? Colors.black
-                  : Colors.white,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          height: 64.0,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16.0,
+          ),
+          child: Center(
+            child: Text(
+              '$title',
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.w600,
+                color: ContextExtensionss(context).theme.backgroundColor ==
+                        Colors.white
+                    ? Colors.black
+                    : Colors.white,
+              ),
             ),
           ),
         ),
@@ -284,15 +287,18 @@ class NavBarIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 64.0,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 0.0,
-      ),
-      child: Center(
-        child: IconButton(
-          icon: icon!,
-          onPressed: onTap,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: Container(
+        height: 64.0,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 0.0,
+        ),
+        child: Center(
+          child: IconButton(
+            icon: icon!,
+            onPressed: onTap,
+          ),
         ),
       ),
     );
