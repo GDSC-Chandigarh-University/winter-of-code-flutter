@@ -37,8 +37,8 @@ class HelpPage extends StatelessWidget {
                 child: Image.asset(
                   ContextExtensionss(context).theme.backgroundColor ==
                           Colors.white
-                      ? 'woc_logo_light.png'
-                      : 'woc_logo_dark.png',
+                      ? 'assets/woc_logo_light.png'
+                      : 'assets/woc_logo_dark.png',
                   height: 28.0,
                 ),
               ),

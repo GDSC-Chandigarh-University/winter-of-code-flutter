@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'dart:js' as js;
@@ -61,13 +62,14 @@ class GuidelinesSection extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    const AutoSizeText(
                       'Sample Proposals',
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 42.0,
                         color: Colors.white,
                       ),
+                      maxLines: 2,
                     ),
                     const SizedBox(
                       height: 15.0,
@@ -81,13 +83,14 @@ class GuidelinesSection extends StatelessWidget {
                           ],
                         );
                       },
-                      child: const Text(
+                      child: const AutoSizeText(
                         'Project Proposal Format >',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 22.0,
                           color: Colors.white,
                         ),
+                        maxLines: 2,
                       ),
                     ),
                     const SizedBox(
@@ -102,13 +105,14 @@ class GuidelinesSection extends StatelessWidget {
                           ],
                         );
                       },
-                      child: const Text(
+                      child: const AutoSizeText(
                         'Proposal Example >',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 22.0,
                           color: Colors.white,
                         ),
+                        maxLines: 2,
                       ),
                     ),
                     const SizedBox(
@@ -121,13 +125,14 @@ class GuidelinesSection extends StatelessWidget {
                           ['https://github.com/saketkc/fos-proposals'],
                         );
                       },
-                      child: const Text(
+                      child: const AutoSizeText(
                         'Previous years’ GSoC selected proposals >',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 22.0,
                           color: Colors.white,
                         ),
+                        maxLines: 2,
                       ),
                     ),
                   ],

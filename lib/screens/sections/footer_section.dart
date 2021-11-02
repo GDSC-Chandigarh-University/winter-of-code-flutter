@@ -25,7 +25,7 @@ class FooterSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset(
-                'bnw_logo.png',
+                'assets/bnw_logo.png',
                 height: 32.0,
               ),
               IconButton(

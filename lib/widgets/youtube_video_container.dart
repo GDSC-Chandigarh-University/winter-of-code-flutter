@@ -40,7 +40,7 @@ class _YoutubeVideoContainerState extends State<YoutubeVideoContainer> {
     return ClipRRect(
       borderRadius: BorderRadius.circular(12.0),
       child: Container(
-        height: screenWidth < 500 ? screenWidth * 0.4 : 256.0,
+        height: screenWidth < 500 ? screenWidth * 0.5 : 256.0,
         width: screenWidth < 965 ? 625.0 : ((screenWidth - 190) / 2),
         decoration: BoxDecoration(
           color: context.theme.primaryColor,

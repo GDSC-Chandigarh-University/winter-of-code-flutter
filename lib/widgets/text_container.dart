@@ -25,7 +25,7 @@ class TextContainer extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          height: screenWidth < 500 ? screenWidth * 0.4 : 256.0,
+          height: screenWidth < 500 ? screenWidth * 0.5 : 256.0,
           width: screenWidth < 965 ? 625.0 : ((screenWidth - 190) / 2),
           padding: EdgeInsets.all(
             screenWidth < 965 ? 30.0 : 40.0,
@@ -56,10 +56,10 @@ class TextContainer extends StatelessWidget {
                 '''$description''',
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
-                  fontSize: 22.0,
+                  fontSize: screenWidth < 500 ? 12 : 22.0,
                   color: !isDisabled ? Colors.white : Colors.black54,
                 ),
-                maxLines: 3,
+                maxLines: screenWidth < 500 ? 4 : 3,
               ),
               link != null
                   ? AutoSizeText(

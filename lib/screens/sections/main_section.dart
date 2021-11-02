@@ -76,8 +76,8 @@ Google DSC Chandigarh University.''',
             children: [
               TextContainer(
                 title: 'Know how it works',
-                description: '''Get complete steps to understand,
-how Google DSC CU Winter of Code works.
+                description:
+                    '''Get complete steps to understand, how Google DSC CU Winter of Code works.
 Know about it''',
                 onTap: () {
                   Navigator.of(context).pushNamed(MyRoutes.howItWorks);
