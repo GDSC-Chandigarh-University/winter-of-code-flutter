@@ -55,16 +55,18 @@ class ProcessTile extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          AutoSizeText(
-            '$description',
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 18.0,
-              color: context.theme.backgroundColor == Colors.white
-                  ? Colors.black
-                  : Colors.white,
+          SizedBox(
+            child: AutoSizeText(
+              '$description',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 18.0,
+                color: context.theme.backgroundColor == Colors.white
+                    ? Colors.black
+                    : Colors.white,
+              ),
+              maxLines: 3,
             ),
-            maxLines: 3,
           ),
         ],
       ),

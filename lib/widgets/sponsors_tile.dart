@@ -64,17 +64,19 @@ class SponsorsTile extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                AutoSizeText(
-                  '$title',
-                  style: TextStyle(
-                    color: context.theme.backgroundColor == Colors.white
-                        ? Colors.black
-                        : Colors.white,
-                    fontSize: 13.0,
-                    fontWeight: FontWeight.w500,
+                SizedBox(
+                  child: AutoSizeText(
+                    '$title',
+                    style: TextStyle(
+                      color: context.theme.backgroundColor == Colors.white
+                          ? Colors.black
+                          : Colors.white,
+                      fontSize: 13.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
                   ),
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
                 ),
               ],
             ),

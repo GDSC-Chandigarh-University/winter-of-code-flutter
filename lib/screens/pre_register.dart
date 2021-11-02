@@ -253,20 +253,22 @@ class _PreRegisterState extends State<PreRegister> {
                             ),
                           ],
                         ),
-                        AutoSizeText(
-                          '''and refer 10 friends to avail early
+                        SizedBox(
+                          child: AutoSizeText(
+                            '''and refer 10 friends to avail early
 mentorship and extra benfits, including
 help with your proposal and early
-community bonding.
-''',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 28.0,
-                            color: context.theme.backgroundColor == Colors.white
-                                ? Colors.black
-                                : Colors.white,
+community bonding.''',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 28.0,
+                              color:
+                                  context.theme.backgroundColor == Colors.white
+                                      ? Colors.black
+                                      : Colors.white,
+                            ),
+                            maxLines: 4,
                           ),
-                          maxLines: 4,
                         ),
                         const SizedBox(
                           height: 10.0,

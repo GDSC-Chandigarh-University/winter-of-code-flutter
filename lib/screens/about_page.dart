@@ -229,17 +229,20 @@ class AboutPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        AutoSizeText(
-                          '''Learn about what is Winter of Code,
+                        SizedBox(
+                          child: AutoSizeText(
+                            '''Learn about what is Winter of Code,
 what is eligibility crieteria,\nand what you\'ll get out of it.''',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 28.0,
-                            color: context.theme.backgroundColor == Colors.white
-                                ? Colors.black
-                                : Colors.white,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 28.0,
+                              color:
+                                  context.theme.backgroundColor == Colors.white
+                                      ? Colors.black
+                                      : Colors.white,
+                            ),
+                            maxLines: 4,
                           ),
-                          maxLines: 4,
                         ),
                         const SizedBox(
                           height: 70.0,

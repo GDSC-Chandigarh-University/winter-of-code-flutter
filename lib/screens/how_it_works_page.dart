@@ -230,16 +230,19 @@ class HowItWorksPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        AutoSizeText(
-                          '''Know about the process\nfor Students, Mentors, and\nOrganizations of this program.''',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 28.0,
-                            color: context.theme.backgroundColor == Colors.white
-                                ? Colors.black
-                                : Colors.white,
+                        SizedBox(
+                          child: AutoSizeText(
+                            '''Know about the process\nfor Students, Mentors, and\nOrganizations of this program.''',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 28.0,
+                              color:
+                                  context.theme.backgroundColor == Colors.white
+                                      ? Colors.black
+                                      : Colors.white,
+                            ),
+                            maxLines: 4,
                           ),
-                          maxLines: 4,
                         ),
                         const SizedBox(
                           height: 70.0,

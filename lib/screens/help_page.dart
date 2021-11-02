@@ -229,17 +229,20 @@ class HelpPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        AutoSizeText(
-                          '''In case of any query consider asking us
+                        SizedBox(
+                          child: AutoSizeText(
+                            '''In case of any query consider asking us
 through given below channels.''',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 28.0,
-                            color: context.theme.backgroundColor == Colors.white
-                                ? Colors.black
-                                : Colors.white,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 28.0,
+                              color:
+                                  context.theme.backgroundColor == Colors.white
+                                      ? Colors.black
+                                      : Colors.white,
+                            ),
+                            maxLines: 4,
                           ),
-                          maxLines: 4,
                         ),
                         const SizedBox(
                           height: 70.0,

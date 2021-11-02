@@ -62,14 +62,16 @@ class GuidelinesSection extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const AutoSizeText(
-                      'Sample Proposals',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 42.0,
-                        color: Colors.white,
+                    const SizedBox(
+                      child: AutoSizeText(
+                        'Sample Proposals',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 42.0,
+                          color: Colors.white,
+                        ),
+                        maxLines: 2,
                       ),
-                      maxLines: 2,
                     ),
                     const SizedBox(
                       height: 15.0,
@@ -83,14 +85,16 @@ class GuidelinesSection extends StatelessWidget {
                           ],
                         );
                       },
-                      child: const AutoSizeText(
-                        'Project Proposal Format >',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 22.0,
-                          color: Colors.white,
+                      child: const SizedBox(
+                        child: AutoSizeText(
+                          'Project Proposal Format >',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 22.0,
+                            color: Colors.white,
+                          ),
+                          maxLines: 2,
                         ),
-                        maxLines: 2,
                       ),
                     ),
                     const SizedBox(
@@ -105,14 +109,16 @@ class GuidelinesSection extends StatelessWidget {
                           ],
                         );
                       },
-                      child: const AutoSizeText(
-                        'Proposal Example >',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 22.0,
-                          color: Colors.white,
+                      child: const SizedBox(
+                        child: AutoSizeText(
+                          'Proposal Example >',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 22.0,
+                            color: Colors.white,
+                          ),
+                          maxLines: 2,
                         ),
-                        maxLines: 2,
                       ),
                     ),
                     const SizedBox(
@@ -125,14 +131,16 @@ class GuidelinesSection extends StatelessWidget {
                           ['https://github.com/saketkc/fos-proposals'],
                         );
                       },
-                      child: const AutoSizeText(
-                        'Previous years’ GSoC selected proposals >',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 22.0,
-                          color: Colors.white,
+                      child: const SizedBox(
+                        child: AutoSizeText(
+                          'Previous years’ GSoC selected proposals >',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 22.0,
+                            color: Colors.white,
+                          ),
+                          maxLines: 2,
                         ),
-                        maxLines: 2,
                       ),
                     ),
                   ],

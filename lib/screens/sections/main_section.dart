@@ -54,18 +54,21 @@ class MainSection extends StatelessWidget {
               ),
             ],
           ),
-          AutoSizeText(
-            '''A month long coding extravaganza for freshers
+          SizedBox(
+            child: AutoSizeText(
+              '''A month long coding extravaganza for freshers
 and open-source enthusiasts by
 Google DSC Chandigarh University.''',
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 28.0,
-              color: context.theme.backgroundColor == Colors.white
-                  ? Colors.black
-                  : Colors.white,
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 28.0,
+                color: context.theme.backgroundColor == Colors.white
+                    ? Colors.black
+                    : Colors.white,
+              ),
+              textAlign: TextAlign.left,
+              maxLines: 3,
             ),
-            maxLines: 3,
           ),
           SizedBox(
             height: screenWidth < 965 ? screenWidth * 0.1 : 110.0,

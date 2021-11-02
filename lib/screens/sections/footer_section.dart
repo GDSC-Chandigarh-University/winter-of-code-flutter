@@ -60,14 +60,16 @@ class FooterSection extends StatelessWidget {
                               ],
                             );
                           },
-                          child: AutoSizeText(
-                            'Privacy Policies',
-                            style: TextStyle(
-                              color: const Color(0xffA4A4A4),
-                              fontSize: screenWidth < 500 ? 14 : 18.0,
-                              fontWeight: FontWeight.w500,
+                          child: SizedBox(
+                            child: AutoSizeText(
+                              'Privacy Policies',
+                              style: TextStyle(
+                                color: const Color(0xffA4A4A4),
+                                fontSize: screenWidth < 500 ? 14 : 18.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              maxLines: 1,
                             ),
-                            maxLines: 1,
                           ),
                         ),
                         GestureDetector(
@@ -79,14 +81,16 @@ class FooterSection extends StatelessWidget {
                               ],
                             );
                           },
-                          child: AutoSizeText(
-                            'Community guildelines',
-                            style: TextStyle(
-                              color: const Color(0xffA4A4A4),
-                              fontSize: screenWidth < 500 ? 14 : 18.0,
-                              fontWeight: FontWeight.w500,
+                          child: SizedBox(
+                            child: AutoSizeText(
+                              'Community guildelines',
+                              style: TextStyle(
+                                color: const Color(0xffA4A4A4),
+                                fontSize: screenWidth < 500 ? 14 : 18.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              maxLines: 1,
                             ),
-                            maxLines: 1,
                           ),
                         ),
                         GestureDetector(
@@ -96,14 +100,16 @@ class FooterSection extends StatelessWidget {
                               ['https://8x7nah30dlu.typeform.com/to/jL58jBjK'],
                             );
                           },
-                          child: AutoSizeText(
-                            'FAQ',
-                            style: TextStyle(
-                              color: const Color(0xffA4A4A4),
-                              fontSize: screenWidth < 500 ? 12 : 18.0,
-                              fontWeight: FontWeight.w500,
+                          child: SizedBox(
+                            child: AutoSizeText(
+                              'FAQ',
+                              style: TextStyle(
+                                color: const Color(0xffA4A4A4),
+                                fontSize: screenWidth < 500 ? 12 : 18.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              maxLines: 1,
                             ),
-                            maxLines: 1,
                           ),
                         ),
                       ],
