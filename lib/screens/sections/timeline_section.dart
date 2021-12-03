@@ -133,32 +133,32 @@ class TimelineSection extends StatelessWidget {
                       isMain: true,
                     ),
                     TimelineTile(
-                      dateText: '1 Nov - 26 Nov ‘21',
+                      dateText: '3 Dec - 22 Dec ‘21',
                       title: 'Students\nPre-registration',
                       isMain: false,
                     ),
                     TimelineTile(
-                      dateText: '13 Nov - 27 Nov ‘21',
+                      dateText: '5 Dec - 19 Dec ‘21',
                       title: 'Organization Application Period',
                       isMain: false,
                     ),
                     TimelineTile(
-                      dateText: '1 Dec ‘21',
+                      dateText: '22 Dec ‘21',
                       title: 'Organizations Announcement',
                       isMain: false,
                     ),
                     TimelineTile(
-                      dateText: '2 Dec - 16 Dec ‘21',
+                      dateText: '23 Dec ‘21 - 6 Jan ‘22',
                       title: 'Student Application Period',
                       isMain: false,
                     ),
                     TimelineTile(
-                      dateText: '21 Dec ‘21',
+                      dateText: '12 Jan ‘22',
                       title: 'Student Projects Announcement',
                       isMain: false,
                     ),
                     TimelineTile(
-                      dateText: '22 Dec - 25 Dec ‘21',
+                      dateText: '13 Jan - 15 Jan ‘22',
                       title: 'Community Bonding',
                       isMain: false,
                     ),
@@ -193,27 +193,27 @@ class TimelineSection extends StatelessWidget {
                   children: [
                     const SpaceTile(),
                     TimelineTile(
-                      dateText: '26 Dec - 26 Jan ‘21',
+                      dateText: '16 Jan - 15 Feb ‘22',
                       title: 'Coding Period',
                       isMain: false,
                     ),
                     TimelineTile(
-                      dateText: '4 Jan - 7 Jan ‘21',
+                      dateText: '1 Feb ‘22',
                       title: 'Mid-way Evaluations',
                       isMain: false,
                     ),
                     TimelineTile(
-                      dateText: '27 Jan - 29 Jan ‘21',
+                      dateText: '16 Feb - 18 Feb ‘21',
                       title: 'Students Submit Code and Final Evaluation',
                       isMain: false,
                     ),
                     TimelineTile(
-                      dateText: '30 Jan - 31 Jan ‘21',
+                      dateText: '19 Feb - 20 Feb ‘21',
                       title: 'Mentors Submit Final Evaluations',
                       isMain: false,
                     ),
                     TimelineTile(
-                      dateText: '4 Feb ‘21',
+                      dateText: '26 Feb ‘21',
                       title: 'Results\nAnnonced',
                       isMain: true,
                     ),
