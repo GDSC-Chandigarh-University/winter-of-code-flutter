@@ -76,7 +76,7 @@ class TimelineTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          Expanded(
             child: AutoSizeText(
               '$title',
               style: TextStyle(
